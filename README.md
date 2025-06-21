@@ -19,10 +19,6 @@ Esta aplicación permite realizar operaciones CRUD sobre productos, con conexió
 2. Configurar la base de datos y modificar `conexion.php` con tus credenciales
 3. Ejecutar en servidor local (XAMPP, Laragon, etc.)
 
-## Uso
-
-Explica aquí brevemente cómo usar tu proyecto o enlaza a documentación.
-
 ## Autor
 
 Jimmy Valens
