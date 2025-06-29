@@ -1,0 +1,19 @@
+{
+    "name": "jcvalens/tienda_web",
+    "description": "Proyecto de tienda web con estructura MVC",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jcvalens\\TiendaWeb\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jimmy Valens",
+            "email": "jvalens.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

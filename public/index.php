@@ -3,29 +3,32 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once 'bootstrap.php';                      // Carga conexión y modelo
-$productos = require_once 'includes/controlador.php'; // Controlador que retorna productos
+require_once __DIR__ . '/../vendor/autoload.php';
 
-// Prueba inicial de la conexión.
-// if ($conexion) {
-//     echo "✅ Conexión exitosa";
-// } else {
-//     echo "❌ No se pudo conectar a la base de datos";
-// }
+// Importar clases necesarias
+use Jcvalens\TiendaWeb\Core\Conexion;
+use Jcvalens\TiendaWeb\Models\ProductoModel;
+
+// Conexión a la base de datos
+$pdo = Conexion::conectar();
+
+if (!$pdo) {
+    echo "❌ No se pudo conectar a la base de datos";
+    exit;
+}
+
+$productos = ProductoModel::obtenerTodos($pdo);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Listado de productos</title>
 </head>
-
 <body>
     <h1>Productos disponibles</h1>
-
 
     <table border='1'>
         <thead>
@@ -44,8 +47,6 @@ $productos = require_once 'includes/controlador.php'; // Controlador que retorna
                 </tr>
             <?php endforeach; ?>
         </tbody>
-
     </table>
 </body>
-
 </html>
